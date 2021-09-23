@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script>
+        (function () {
+            var metaEl = document.createElement('meta');
+            var scale = devicePixelRatio;
+            metaEl.setAttribute('name', 'viewport');
+            metaEl.setAttribute('content', 'initial-scale=' + (1 / scale) + ', maximum-scale=' + (1 / scale) + ', minimum-scale=' + (1 / scale) + ', user-scalable=no');
+            document.documentElement.firstElementChild.appendChild(metaEl);
+        })();
+    </script>
+    <title>Document</title>
+    <!-- 
+        比例单位: vw: 100vw = 1屏幕宽度
+     -->
+     <style>
+         body {
+             margin: 0;
+         }
+         #box {
+             display: flex;
+         }
+         #box div{
+             width: 46.4vw;
+             height: 24vw;
+             background: red;
+             font-size: 5vw;
+         }
+         #box div:nth-of-type(1) {
+            margin: 0 2.133vw 0 2.667vw;
+         }
+         nav {
+             display: flex;
+         }
+         nav a {
+             margin: 0 4px;
+             font-size: 3.2vw;
+             text-decoration: none;
+             color: red;
+         }
+         /* 
+          min-width
+          max-width <=
+          */
+         @media all and (max-width:640px) {
+              nav a {
+                  color: green;
+              }  
+         }
+     </style>
+</head>
+
+<body>
+    <div id="box">
+        <div>尖货抽签</div>
+        <div>新品日历</div>
+    </div>
+    <nav>
+        <a href="#">文字-1</a>
+        <a href="#">文字-2</a>
+        <a href="#">文字-3</a>
+        <a href="#">文字-4</a>
+        <a href="#">文字-5</a>
+        <a href="#">文字-6</a>
+        <a href="#">文字-7</a>
+    </nav>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script>
+        (function () {
+            var metaEl = document.createElement('meta');
+            var scale = devicePixelRatio;
+            metaEl.setAttribute('name', 'viewport');
+            metaEl.setAttribute('content', 'initial-scale=' + (1 / scale) + ', maximum-scale=' + (1 / scale) + ', minimum-scale=' + (1 / scale) + ', user-scalable=no');
+            document.documentElement.firstElementChild.appendChild(metaEl);
+        })();
+        // root em 设置
+        (function(){
+            // 375/15
+            var doc = document.documentElement;
+            doc.style.fontSize = window.innerWidth/15 + "px";
+        })();
+        // 1rem = 1屏幕尺寸的15之一
+    </script>
+    <title>Document</title>
+    <!-- 
+        比例单位: vw
+     -->
+     <style>
+         body {
+             margin: 0;
+         }
+         #box {
+             display: flex;
+         }
+         #box div{
+             width: 6.96rem;
+             height: 3.6rem;
+             background: red;
+             margin: 0 0.2rem;
+             font-size: .64rem;
+         }
+     </style>
+</head>
+
+<body>
+    <div id="box">
+        <div>尖货抽签</div>
+        <div>新品日历</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        #wrap {
+            margin: 20vh auto 0;
+            width: 260px;
+            height: 50vh;
+            border: 1px solid #000;
+            overflow: hidden;
+        }
+        #list {
+            margin: 0;
+            padding: 10px 5px;
+            list-style: none;
+            font: 16px/2 "宋体";
+        }
+        #list li {
+            border-bottom: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <ul id="list"></ul>
+</div>  
+<button id="press">长按</button>
+<button id="tap">点击</button>
+<button id="btn">正常</button>
+<script>
+{
+    let list = document.querySelector("#list");
+    list.innerHTML = [...(".".repeat(100))].map((item,index)=>`<li>这是第${index}个li</li>`).join("");
+}    
+</script>
+<script src="js/gesture.js"></script>
+<script>
+ {
+     let list = document.querySelector("#list");
+     enableGesture(list);
+     list.addEventListener("panstart",(e)=>{
+        console.log("panstart");
+     });
+     list.addEventListener("pan",(e)=>{
+        console.log("pan");
+     });
+     list.addEventListener("panend",(e)=>{
+        console.log("panend");
+     });
+     enableGesture(press);
+     press.addEventListener("pressstart",()=>{
+         console.log("pressstart");
+     });
+     press.addEventListener("pressend",()=>{
+         console.log("presend");
+     });
+     press.addEventListener("presscancel",()=>{
+         console.log("presscancel");
+     });
+     enableGesture(tap);
+     tap.addEventListener("tap",()=>{
+         console.log("tap");
+     })
+ }   
+</script>
+</body>
+</html>

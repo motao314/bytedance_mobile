@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Document</title>
+    <script>
+        (function () {
+            var metaEl = document.createElement('meta');
+            var scale = devicePixelRatio;
+            metaEl.setAttribute('name', 'viewport');
+            metaEl.setAttribute('content', 'initial-scale=' + (1/scale) + ', maximum-scale=' + (1/scale) + ', minimum-scale=' + (1/scale) + ', user-scalable=no');
+            document.documentElement.firstElementChild.appendChild(metaEl);
+        })();
+    </script>
+    <style>
+        body {
+            margin: 0;
+            font-size: 4vw;
+            line-height: 1.5;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #banner {
+            position: relative;
+            width: 100vw;
+            overflow: hidden;
+            text-align: center;
+        }
+        #banner_pic {
+            display: flex;
+            transform: translateX(0);
+        }
+        #banner_pic li {
+            flex: none;
+            width: 100vw;
+        }
+        #banner_pic img {
+            display: block;
+            width: 100%;
+        }
+        #banner_nav {
+            position: absolute;
+            left: 10vw;
+            bottom: 2vw;
+        }
+        #banner_nav span {
+            float: left;
+            margin: 0 .5vw;
+            width: 4vw;
+            height: 1vw;
+            background: #fff;
+        }
+        #banner_nav span.active {
+            background: blue;
+        }
+    </style>
+</head>
+<script src="js/gesture.js" type="text/babel"></script>
+<script src="js/carousel.js" type="text/babel"></script>
+<script src="js/babel.js"></script>
+<body>
+    <div id="banner">
+        <ul id="banner_pic">
+            <li>
+                <img src="https://static001.geekbang.org/resource/image/bb/21/bb38fb7c1073eaee1755f81131f11d21.jpg"/>
+            </li>
+            <li>
+                <img src="https://static001.geekbang.org/resource/image/1b/21/1b809d9a2bdf3ecc481322d7c9223c21.jpg" />
+            </li>
+            <li>
+                <img src="https://static001.geekbang.org/resource/image/b6/4f/b6d65b2f12646a9fd6b8cb2b020d754f.jpg" />
+            </li>
+            <li>
+                <img src="https://static001.geekbang.org/resource/image/73/e4/730ea9c393def7975deceb48b3eb6fe4.jpg" />
+            </li>
+        </ul>
+        <nav id="banner_nav">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </nav>
+    </div>
+    <h3>占位1</h3>
+    <h3>占位1</h3>
+    <h3>占位1</h3>
+    <h3>占位1</h3>
+    <h3>占位1</h3>
+    <h3>占位1</h3>
+    <h3>占位1</h3>
+    <h3>占位1</h3>
+    <h3>占位1</h3>
+    <h3>占位1</h3>
+    <h3>占位1</h3>
+    <h3>占位1</h3>
+    <h3>占位1</h3>
+    <h3>占位1</h3>
+    <h3>占位1</h3>
+    <h3>占位1</h3>
+    <h3>占位1</h3>
+    <h3>占位1</h3>
+    <h3>占位1</h3>
+    <h3>占位1</h3>
+    <h3>占位1</h3>
+    <h3>占位1</h3>
+    <h3>占位1</h3>
+    <h3>占位1</h3>
+    <h3>占位1</h3>
+</body>
+<script type="text/babel">
+    enableGesture(document.querySelector("#banner"));
+    new Carousel({
+        wrap:document.querySelector("#banner_pic"),
+        navs:document.querySelectorAll("#banner_nav span")
+    });
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- viewport 移动端特有设置，解决移动端屏幕过小，放不下正常网页的问题 -->
+    <!-- <meta name="viewport" content="width=device-width" /> -->
+    <!-- 当不设置 viewport 时，视口大小默认为 980 -->
+    <script>
+        (function () {
+            var metaEl = document.createElement('meta');
+            var scale = devicePixelRatio;
+            metaEl.setAttribute('name', 'viewport');
+            metaEl.setAttribute('content', 'initial-scale=' + (1 / scale) + ', maximum-scale=' + (1 / scale) + ', minimum-scale=' + (1 / scale) + ', user-scalable=no');
+            document.documentElement.firstElementChild.appendChild(metaEl);
+        })();
+    </script>
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+    <script>
+        // 1920x1080 像素分辨率
+        console.log(window.devicePixelRatio); // 像素比
+        // 像素比：原先 1px的内容，放大到 devicePixelRatio px 显示
+    </script>
+</head>
+
+<body>
+    <div id="box"></div>
+</body>
+
+</html>

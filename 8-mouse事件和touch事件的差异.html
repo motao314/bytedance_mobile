@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        #box2 {
+            width: 200px;
+            height: 200px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+<div id="box1"></div>
+<div id="box2"></div>    
+<script>
+box1.addEventListener("touchstart",(e)=>{
+    //手指在元素上摁下
+    console.log("start","box1");
+});
+box1.addEventListener("touchmove",(e)=>{
+    //手指在元素上摁下之后，在屏幕中移动
+    console.log("move","box1");
+});    
+box1.addEventListener("touchend",(e)=>{
+    //手指在元素上摁下之后，从屏幕上抬起
+    console.log("end","box1");
+});
+box2.addEventListener("mousedown",(e)=>{
+    //鼠标在元素上摁下
+    console.log("start","box2");
+});
+box2.addEventListener("mousemove",(e)=>{
+    //鼠标在元素上移动
+    console.log("move","box2");
+});    
+box2.addEventListener("mouseup",(e)=>{
+    //鼠标在元素上抬起
+    console.log("end","box2");
+});    
+</script>
+</body>
+</html>

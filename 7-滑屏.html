@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        #wrap {
+            margin: 20vh auto;
+            width: 260px;
+            height: 50vh;
+            border: 1px solid #000;
+            overflow: hidden;
+        }
+        #list {
+            margin: 0;
+            padding: 10px 5px;
+            list-style: none;
+            font: 16px/2 "宋体";
+        }
+        #list li {
+            border-bottom: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <ul id="list"></ul>
+</div>  
+<script>
+{
+    let list = document.querySelector("#list");
+    list.innerHTML = [...(".".repeat(100))].map((item,index)=>`<li>这是第${index}个li</li>`).join("");
+    for(let i = 0; i < list.children.length; i++){
+        list.children[i].addEventListener("touchend",()=>{
+            console.log(i);
+        })
+    }
+}    
+</script>  
+<script>
+{
+    let list = document.querySelector("#list");
+    let startPoint = 0;//按下时鼠标的位置
+    let startEl = 0;//按下时元素的位置
+    let y = 0;
+    list.addEventListener("touchstart",(e)=>{
+        let touch = e.changedTouches[0];
+        startPoint = touch.clientY;
+        startEl = y;
+    });
+    list.addEventListener("touchmove",(e)=>{
+        let touch = e.changedTouches[0];
+        let nowPoint = touch.clientY;
+        y = startEl + (nowPoint - startPoint);
+        list.style.transform = `translate3d(0,${y}px,0)`;
+    });
+}
+</script>
+</body>
+</html>
